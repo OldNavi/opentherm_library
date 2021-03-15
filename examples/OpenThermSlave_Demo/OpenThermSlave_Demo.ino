@@ -8,11 +8,11 @@ http://ihormelnyk.com
 #include <Arduino.h>
 #include <OpenTherm.h>
 
-const int inPin = 2; //for Arduino, 12 for ESP8266
-const int outPin = 3; //for Arduino, 13 for ESP8266
+const int inPin = 2;  //for Arduino, 12 for ESP8266 (D6), 19 for ESP32
+const int outPin = 3; //for Arduino, 13 for ESP8266 (D7), 23 for ESP32
 OpenTherm ot(inPin, outPin, true);
 
-void handleInterrupt() {
+void ICACHE_RAM_ATTR handleInterrupt() {
     ot.handleInterrupt();
 }
 
